@@ -153,7 +153,7 @@ def optimized (arr,start=0):
 def main():
     while(True):
         n = int(input("Enter number\n1-FCFS\n2-SSTF\n3-SCAN\n4-C-SCAN\n5-Look\n6-C-Look\n7-Optimized\n"))
-        if (n>6 or n<1):
+        if (n>7 or n<1):
             print("Please enter a valid number")
             continue
 
@@ -171,7 +171,7 @@ def main():
         elif n==6: cLook(arr, start)
         elif n==7: optimized(arr)
         else : print("Enter a valid number\n")
-        print('*'*100)
+        print('*'*75)
     return
 
 if __name__ == '__main__':
