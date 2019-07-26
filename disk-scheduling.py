@@ -91,6 +91,28 @@ def cScan(arr,start):
     print("\nTotal Number of Cylinders moves is " + str(cost))
     return
 
+def Look(arr, start):
+    arr1 = []
+    arr2 = []
+    for element in arr:
+        if (element > start):
+            arr1.append(element)
+        else:
+            arr2.append(element)
+    arr1.sort()
+    arr2.sort(reverse=True)
+    print('{}->'.format(start), end="")
+    for element in arr1:
+        print(str(element) + '->', end='')
+    for element in arr2:
+        if element == min(arr2):
+            print(str(element))
+            break
+        print(str(element) + '->', end='')
+    cost = (max(arr1) - start)*2 + (start - min(arr2))
+    print("\nTotal Number of Cylinders moves is " + str(cost))
+    return
+
 def cLook(arr,start):
     arr1 = []
     arr2 = []
@@ -111,14 +133,14 @@ def cLook(arr,start):
             print(str(element), end='')
         else:
             print(str(element) + '->', end='')
-    cost = (max(arr1) - start) +(max(arr1) - min(arr2))  +( max(arr2) - min(arr2))
+    cost = (max(arr1) - start) +(max(arr1) - min(arr2)) + ( max(arr2) - min(arr2))
     # will always go to left then to zero then again to left
     print("\nTotal Number of Cylinders moves is " + str(cost))
     return
 
 def optimized (arr,start=0):
     arr.sort()
-    cost = max(arr) # Here I just have to send the max number
+    cost = max(arr) # just the max number
     print('0->', end='')
     for idx, element in enumerate(arr):
         if (idx == len(arr) - 1):
@@ -130,7 +152,7 @@ def optimized (arr,start=0):
 
 def main():
     while(True):
-        n = int(input("Enter number\n1-FCFS\n2-SSTF\n3-SCAN\n4-C-SCAN\n5-C-Look\n6-Optimized\n"))
+        n = int(input("Enter number\n1-FCFS\n2-SSTF\n3-SCAN\n4-C-SCAN\n5-Look\n6-C-Look\n7-Optimized\n"))
         if (n>6 or n<1):
             print("Please enter a valid number")
             continue
@@ -145,8 +167,9 @@ def main():
         elif n==2: SSTF(arr, start)
         elif n==3: scan(arr, start)
         elif n==4: cScan(arr, start)
-        elif n==5: cLook(arr, start)
-        elif n==6: optimized(arr)
+        elif n==5: Look(arr, start)
+        elif n==6: cLook(arr, start)
+        elif n==7: optimized(arr)
         else : print("Enter a valid number\n")
         print('*'*100)
     return
