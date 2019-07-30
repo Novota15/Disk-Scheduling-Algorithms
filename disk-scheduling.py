@@ -159,9 +159,9 @@ def main():
 
         # arr = [98, 183, 37, 122, 14, 124, 65, 67]
         # arr = [32, 901, 447, 432, 673, 506, 851, 679, 173, 313]
-        arr = [2069, 1212, 2296, 2800, 544, 1618, 356, 1523, 4965, 3681]
+        arr = [40, 48, 14, 44, 90, 99, 55]
         # currently serving:
-        start = 2150
+        start = 15
         if n==1: FCFS(arr, start)
         elif n==2: SSTF(arr, start)
         elif n==2: SSTF(arr, start)
