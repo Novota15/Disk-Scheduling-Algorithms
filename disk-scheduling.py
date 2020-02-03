@@ -3,24 +3,24 @@
 def FCFS(arr,start):
     print("First Come First Served")
     cost = 0
-    print (str(start)+'->',end='')
+    print (str(start) + '->',end='')
     temp = start
     for idx,i in enumerate(arr):
         if idx == len(arr)-1:
             print(str(i), end='')
         else:
-            print(str(i)+ '->', end='')
-        cost+=abs(temp-i)
+            print(str(i) + '->', end='')
+        cost += abs(temp-i)
         temp = i
-    print("\nTotal Number of Cylinders moves is "+str(cost))
+    print("\nTotal Number of Cylinder moves is " + str(cost))
     return
 
 def getMin(curr,arr):
     minimum = 10e9
     idx = -1
     for i in (arr):
-        if (abs(curr-i)<minimum):
-            minimum =abs(curr-i)
+        if (abs(curr-i) < minimum):
+            minimum = abs(curr-i)
             idx = i
     return idx
 
@@ -30,15 +30,15 @@ def SSTF(arr,start):
     print(str(start) + '->', end='')
     temp = start
     while(True):
-        if (len(arr)==0):break
+        if (len(arr) == 0):break
         minimum = getMin(temp,arr)
-        if (len(arr)==1):
+        if (len(arr) == 1):
             print(str(minimum) , end='')
         else:print(str(minimum) + '->', end='')
-        cost+=abs(temp-minimum)
+        cost += abs(temp - minimum)
         temp = minimum
         arr.pop(arr.index(minimum))
-    print("\nTotal Number of Cylinders moves is " + str(cost))
+    print("\nTotal Number of Cylinder moves is " + str(cost))
     return
 
 def scan(arr,start):
@@ -47,7 +47,7 @@ def scan(arr,start):
     arr1=[]
     arr2=[]
     for element in (arr):
-        if (element<start):
+        if (element < start):
             arr1.append(element)
         else:
             arr2.append(element)
@@ -59,11 +59,11 @@ def scan(arr,start):
         print(str(element) + '->', end='')
     print('0->',end="")
     for idx,element in enumerate(arr2):
-        if (idx==len(arr2)-1):
+        if (idx == len(arr2)-1):
             print(str(element), end='')
         else:
             print(str(element) + '->', end='')
-    print("\nTotal Number of Cylinders moves is " + str(cost))
+    print("\nTotal Number of Cylinder moves is " + str(cost))
     return
 
 def cScan(arr,start):
@@ -88,7 +88,7 @@ def cScan(arr,start):
             print(str(element) + '->', end='')
     cost = ( Maxi - start) + max(arr2) + Maxi
     #will always go to left then to zero then again to left
-    print("\nTotal Number of Cylinders moves is " + str(cost))
+    print("\nTotal Number of Cylinder moves is " + str(cost))
     return
 
 def Look(arr, start):
@@ -110,7 +110,7 @@ def Look(arr, start):
             break
         print(str(element) + '->', end='')
     cost = (max(arr1) - start)*2 + (start - min(arr2))
-    print("\nTotal Number of Cylinders moves is " + str(cost))
+    print("\nTotal Number of Cylinder moves is " + str(cost))
     return
 
 def cLook(arr,start):
@@ -133,9 +133,9 @@ def cLook(arr,start):
             print(str(element), end='')
         else:
             print(str(element) + '->', end='')
-    cost = (max(arr1) - start) +(max(arr1) - min(arr2)) + ( max(arr2) - min(arr2))
+    cost = (max(arr1) - start) + (max(arr1) - min(arr2)) + ( max(arr2) - min(arr2))
     # will always go to left then to zero then again to left
-    print("\nTotal Number of Cylinders moves is " + str(cost))
+    print("\nTotal Number of Cylinder moves is " + str(cost))
     return
 
 def optimized (arr,start=0):
@@ -147,7 +147,7 @@ def optimized (arr,start=0):
             print(str(element), end='')
         else:
             print(str(element) + '->', end='')
-    print("\nTotal Number of Cylinders moves is " + str(cost))
+    print("\nTotal Number of Cylinder moves is " + str(cost))
     return
 
 def main():
